@@ -1,0 +1,41 @@
+PODS:
+  - HandyJSON (5.0.2)
+  - "NSObject+Rx (5.2.2)":
+    - RxSwift (~> 6.2)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxGesture (4.0.4):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+
+DEPENDENCIES:
+  - HandyJSON
+  - "NSObject+Rx"
+  - RxCocoa
+  - RxGesture
+  - RxSwift
+
+SPEC REPOS:
+  trunk:
+    - HandyJSON
+    - "NSObject+Rx"
+    - RxCocoa
+    - RxGesture
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  "NSObject+Rx": 61cf1f7306a73dcef8b36649198af0813ec18dfd
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+
+PODFILE CHECKSUM: 1b7b08afcef44dafa0a497637e5c035c30507561
+
+COCOAPODS: 1.11.3
