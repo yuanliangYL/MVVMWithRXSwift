@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserInfomationView" customModule="MVVMWithRX" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="434" height="328"/>
+            <rect key="frame" x="0.0" y="0.0" width="434" height="694"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyi-Ov-df0">
@@ -27,32 +27,40 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOB-6g-1WI">
-                    <rect key="frame" x="153" y="201" width="128" height="93"/>
+                    <rect key="frame" x="153" y="201" width="128" height="34.333333333333343"/>
                     <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="更新用户信息"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbb-IU-abC">
+                    <rect key="frame" x="153" y="270.33333333333331" width="128" height="34.333333333333314"/>
+                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="跳转设置页面"/>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="uOB-6g-1WI" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="3Rq-qS-Zuj"/>
                 <constraint firstItem="uOB-6g-1WI" firstAttribute="top" secondItem="e5X-na-qEG" secondAttribute="bottom" constant="100" id="9f5-PV-RLq"/>
                 <constraint firstItem="e5X-na-qEG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Tsx-vS-jdh"/>
                 <constraint firstAttribute="trailing" secondItem="qyi-Ov-df0" secondAttribute="trailing" constant="15" id="bhA-jB-GgY"/>
+                <constraint firstItem="Dbb-IU-abC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c6s-nM-DMq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="e5X-na-qEG" secondAttribute="trailing" constant="15" id="eIv-mz-rxJ"/>
                 <constraint firstItem="qyi-Ov-df0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="g1f-Bq-hfw"/>
                 <constraint firstItem="qyi-Ov-df0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="iwv-Ob-xaD"/>
                 <constraint firstItem="uOB-6g-1WI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lkI-qi-Wy0"/>
                 <constraint firstItem="e5X-na-qEG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="21" id="loi-hQ-hr9"/>
+                <constraint firstItem="Dbb-IU-abC" firstAttribute="top" secondItem="uOB-6g-1WI" secondAttribute="bottom" constant="35" id="v2o-j1-eqV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="ageLabel" destination="e5X-na-qEG" id="ZL1-gZ-caT"/>
+                <outlet property="gosettingBtn" destination="Dbb-IU-abC" id="EOY-wu-Al5"/>
                 <outlet property="nameLabel" destination="qyi-Ov-df0" id="92D-DV-8Em"/>
                 <outlet property="updateBtn" destination="uOB-6g-1WI" id="GZf-Ls-K2E"/>
             </connections>
-            <point key="canvasLocation" x="254.96183206106869" y="-200"/>
+            <point key="canvasLocation" x="85.496183206106863" y="-95.070422535211279"/>
         </view>
     </objects>
     <resources>

@@ -23,6 +23,8 @@
 		57D9263C29D29BF600A080BB /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9263B29D29BF600A080BB /* BaseModel.swift */; };
 		57D9263F29D29CEB00A080BB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9263D29D29CEB00A080BB /* BaseViewController.swift */; };
 		57D9264029D29CEB00A080BB /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D9263E29D29CEB00A080BB /* BaseViewController.xib */; };
+		57D9264329D2DB1100A080BB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9264129D2DB1100A080BB /* SettingViewController.swift */; };
+		57D9264429D2DB1100A080BB /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D9264229D2DB1100A080BB /* SettingViewController.xib */; };
 		B72EFC05AA252024902C8C7E /* Pods_MVVMWithRX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EEBE7065E3E23B516F6D81 /* Pods_MVVMWithRX.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		57D9263B29D29BF600A080BB /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		57D9263D29D29CEB00A080BB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		57D9263E29D29CEB00A080BB /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		57D9264129D2DB1100A080BB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		57D9264229D2DB1100A080BB /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		D7EEBE7065E3E23B516F6D81 /* Pods_MVVMWithRX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMWithRX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				57395F9B29D28BF00067EC8D /* MineViewController.swift */,
+				57D9264129D2DB1100A080BB /* SettingViewController.swift */,
+				57D9264229D2DB1100A080BB /* SettingViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57395F8429D27C560067EC8D /* LaunchScreen.storyboard in Resources */,
+				57D9264429D2DB1100A080BB /* SettingViewController.xib in Resources */,
 				57D9264029D29CEB00A080BB /* BaseViewController.xib in Resources */,
 				57395F9729D288770067EC8D /* UserInfomationView.xib in Resources */,
 				57395F8129D27C560067EC8D /* Assets.xcassets in Resources */,
@@ -305,6 +312,7 @@
 				57395F9529D288610067EC8D /* UserInfomationView.swift in Sources */,
 				57395F9329D2872D0067EC8D /* UserViewModel.swift in Sources */,
 				57395F7A29D27C540067EC8D /* SceneDelegate.swift in Sources */,
+				57D9264329D2DB1100A080BB /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

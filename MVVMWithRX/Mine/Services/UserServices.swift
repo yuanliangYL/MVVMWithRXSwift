@@ -32,6 +32,17 @@ class UserServices{
              return Disposables.create {}
          }.asObservable()
     }
+
+    //更新名称
+    func updateName(name:String,origin:UserModel)->Observable<UserModel>{
+        return Single.create{ single in
+            let info = origin
+            info.name = name
+            single(.success(info))
+            return Disposables.create {}
+        }.asObservable()
+    }
+
  // MARK: -- 数据信息的增删改查
 
 

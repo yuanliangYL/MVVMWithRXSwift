@@ -45,4 +45,10 @@ class UserViewModel: BaseViewModel {
             self.userinfo.accept(data)
         }.disposed(by: rx.disposeBag)
     }
+
+    func updateName(name:String){
+        userService.updateName(name: name, origin: userinfo.value).subscribe { res in
+            self.userinfo.accept(res)
+        }.disposed(by: rx.disposeBag)
+    }
 }

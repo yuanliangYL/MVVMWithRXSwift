@@ -13,7 +13,8 @@ class UserInfomationView: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var updateBtn: UIButton!
-
+    @IBOutlet weak var gosettingBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

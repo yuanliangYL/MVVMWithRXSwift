@@ -9,8 +9,6 @@ import UIKit
 import RxSwift
 class MineViewController: BaseViewController {
 
-    let dis:DisposeBag = DisposeBag()
-
     //controller持有View
     var userinfo:UserInfomationView!
     var userVM:UserViewModel! = UserViewModel()
@@ -43,8 +41,9 @@ class MineViewController: BaseViewController {
             guard let ur = user.element else {return}
             self?.userinfo.nameLabel.text = ur.name
             self?.userinfo.ageLabel.text = "\(ur.age)"
-        }.disposed(by: dis)
+        }.disposed(by: rx.disposeBag)
 
+        
         //View---->VM
         userinfo.updateBtn.rx.tapGesture()
             .when(.recognized)
@@ -52,6 +51,19 @@ class MineViewController: BaseViewController {
             .subscribe {[weak self] _ in
                 //事件处理
                 self?.userVM.updateuserInfo()
+        }.disposed(by: rx.disposeBag)
+
+        //View---->VM
+        userinfo.gosettingBtn.rx.tapGesture()
+            .when(.recognized)
+            .throttle(.seconds(2), scheduler: MainScheduler.instance)
+            .subscribe {[weak self] _ in
+
+                //事件处理:这里使用URLnavigator改进
+                let setting = SettingViewController()
+                setting.userVM = self?.userVM
+                self?.navigationController?.pushViewController(setting, animated: true)
+
         }.disposed(by: rx.disposeBag)
     }
     
