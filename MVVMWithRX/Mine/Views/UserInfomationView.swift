@@ -15,9 +15,37 @@ class UserInfomationView: UIView {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var updateBtn: UIButton!
     @IBOutlet weak var gosettingBtn: UIButton!
-    
+
+    //数据更新手势操作
+    var updateGesture = PublishSubject<Bool>()
+    //页面跳转
+    var openGesture = PublishSubject<Bool>()
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        initAction()
+    }
+
+
+    //UI相关操作内置与View层中，实现独立
+    //思考：这种方式在复用机制下会出现什么问题？
+    func initAction(){
+        //View---->VM
+        updateBtn.rx.tapGesture()
+            .when(.recognized)
+            .throttle(.seconds(2), scheduler: MainScheduler.instance)
+            .subscribe {[weak self] _ in
+                //事件处理
+                self?.updateGesture.onNext(true)
+        }.disposed(by: rx.disposeBag)
+
+        //View---->VM
+        gosettingBtn.rx.tapGesture()
+            .when(.recognized)
+            .throttle(.seconds(2), scheduler: MainScheduler.instance)
+            .subscribe {[weak self] _ in
+                self?.openGesture.onNext(true)
+        }.disposed(by: rx.disposeBag)
     }
 
 }

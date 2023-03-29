@@ -46,26 +46,39 @@ class MineViewController: BaseViewController {
         //通过bind方法，将UI赋值操作交付给View层
         userVM.userinfo.bind(to: userinfo.model).disposed(by: rx.disposeBag)
 
-        
-        //View---->VM
-        userinfo.updateBtn.rx.tapGesture()
-            .when(.recognized)
-            .throttle(.seconds(2), scheduler: MainScheduler.instance)
-            .subscribe {[weak self] _ in
-                //事件处理
-                self?.userVM.updateuserInfo()
+
+        //视图层抛出事件的真实处理
+        userinfo.updateGesture.subscribe { [weak self] _ in
+            self?.userVM.updateuserInfo()
         }.disposed(by: rx.disposeBag)
 
-        //View---->VM
-        userinfo.gosettingBtn.rx.tapGesture()
-            .when(.recognized)
-            .throttle(.seconds(2), scheduler: MainScheduler.instance)
-            .subscribe {[weak self] _ in
-                //事件处理:这里使用URLnavigator改进
-                let setting = SettingViewController()
-                setting.userVM = self?.userVM
-                self?.navigationController?.pushViewController(setting, animated: true)
+        userinfo.openGesture.subscribe { [weak self] _ in
+            //事件处理:这里使用URLnavigator改进
+            let setting = SettingViewController()
+            setting.userVM = self?.userVM
+            self?.navigationController?.pushViewController(setting, animated: true)
         }.disposed(by: rx.disposeBag)
+
+
+        //View---->VM
+//        userinfo.updateBtn.rx.tapGesture()
+//            .when(.recognized)
+//            .throttle(.seconds(2), scheduler: MainScheduler.instance)
+//            .subscribe {[weak self] _ in
+//                //事件处理
+//                self?.userVM.updateuserInfo()
+//        }.disposed(by: rx.disposeBag)
+//
+//        //View---->VM
+//        userinfo.gosettingBtn.rx.tapGesture()
+//            .when(.recognized)
+//            .throttle(.seconds(2), scheduler: MainScheduler.instance)
+//            .subscribe {[weak self] _ in
+//                //事件处理:这里使用URLnavigator改进
+//                let setting = SettingViewController()
+//                setting.userVM = self?.userVM
+//                self?.navigationController?.pushViewController(setting, animated: true)
+//        }.disposed(by: rx.disposeBag)
         
     }
     
