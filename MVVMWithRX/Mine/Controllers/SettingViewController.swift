@@ -14,6 +14,16 @@ class SettingViewController: BaseViewController {
 
     @IBOutlet weak var sureChange: UIButton!
     @IBOutlet weak var name: UITextField!
+
+    // 内部序列响应，不被外界影响：用于方向传参测试
+    fileprivate var mySubject = PublishSubject<Any>()
+    var publicOB : Observable<Any>{
+        return mySubject.asObservable()
+    }
+
+    deinit{
+        mySubject.onNext(#function)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

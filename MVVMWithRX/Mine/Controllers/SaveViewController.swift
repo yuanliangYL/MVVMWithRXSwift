@@ -11,6 +11,8 @@ class SaveViewController: BaseViewController {
 
     @IBOutlet weak var tableview: UITableView!
 
+    
+
     var datas:[SaveModel] = []
     var saveVM = SaveViewModel()
 
@@ -55,6 +57,7 @@ extension SaveViewController:UITableViewDataSource,UITableViewDelegate{
         //把主动销毁的能力收回，销毁垃圾袋交给我们的cell.disposeBag,在我们重用响应的时候，及时销毁，重置！
         cell.logGesture.subscribe { data in
             print("log data is :\(String(describing: data.element?.name))")
+            //执行具体操作
         }.disposed(by: cell.disposeBag)
 
         return cell

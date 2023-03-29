@@ -59,26 +59,30 @@ extension MineViewController{
         }.disposed(by: rx.disposeBag)
     }
 
-
     func gotoSeeting(){
         userinfo.openGesture.subscribe { [weak self] _ in
+
             //事件处理:这里使用URLnavigator改进
             let setting = SettingViewController()
             setting.userVM = self?.userVM
+            setting.publicOB
+               .subscribe(onNext: { (item) in
+                   print("订阅到 \(item)")
+               }).disposed(by: setting.rx.disposeBag)
+
             self?.navigationController?.pushViewController(setting, animated: true)
         }.disposed(by: rx.disposeBag)
     }
 
 
     func gotoSave(){
-        userinfo.saveGesture.subscribe { [weak self] _ in
 
+        userinfo.saveGesture.subscribe { [weak self] _ in
             //事件处理:这里使用URLnavigator改进
             let save = SaveViewController()
             self?.navigationController?.pushViewController(save, animated: true)
-
-            
         }.disposed(by: rx.disposeBag)
+
     }
 }
 
