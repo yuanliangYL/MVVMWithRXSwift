@@ -38,11 +38,18 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="跳转设置页面"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLE-ir-TIa">
+                    <rect key="frame" x="153" y="355" width="128" height="34.333333333333314"/>
+                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="跳转收藏页面"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="uOB-6g-1WI" firstAttribute="top" secondItem="e5X-na-qEG" secondAttribute="bottom" constant="100" id="9f5-PV-RLq"/>
+                <constraint firstItem="yLE-ir-TIa" firstAttribute="top" secondItem="Dbb-IU-abC" secondAttribute="bottom" constant="50.329999999999998" id="C81-3d-ki8"/>
                 <constraint firstItem="e5X-na-qEG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Tsx-vS-jdh"/>
                 <constraint firstAttribute="trailing" secondItem="qyi-Ov-df0" secondAttribute="trailing" constant="15" id="bhA-jB-GgY"/>
                 <constraint firstItem="Dbb-IU-abC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c6s-nM-DMq"/>
@@ -52,12 +59,14 @@
                 <constraint firstItem="uOB-6g-1WI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lkI-qi-Wy0"/>
                 <constraint firstItem="e5X-na-qEG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="21" id="loi-hQ-hr9"/>
                 <constraint firstItem="Dbb-IU-abC" firstAttribute="top" secondItem="uOB-6g-1WI" secondAttribute="bottom" constant="35" id="v2o-j1-eqV"/>
+                <constraint firstItem="yLE-ir-TIa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ymK-pf-dzK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="ageLabel" destination="e5X-na-qEG" id="ZL1-gZ-caT"/>
                 <outlet property="gosettingBtn" destination="Dbb-IU-abC" id="EOY-wu-Al5"/>
                 <outlet property="nameLabel" destination="qyi-Ov-df0" id="92D-DV-8Em"/>
+                <outlet property="saveBtn" destination="yLE-ir-TIa" id="8QK-7Z-QHO"/>
                 <outlet property="updateBtn" destination="uOB-6g-1WI" id="GZf-Ls-K2E"/>
             </connections>
             <point key="canvasLocation" x="85.496183206106863" y="-95.070422535211279"/>

@@ -10,6 +10,7 @@ import UIKit
 protocol BaseViewControllerProtocol {
     func setupUI()
     func bind()
+    func requestData()
 }
 
 
@@ -19,6 +20,8 @@ class BaseViewController: UIViewController,BaseViewControllerProtocol {
         super.viewDidLoad()
         setupUI()
         bind()
+
+        requestData()
     }
 
     func setupUI() {
@@ -26,6 +29,10 @@ class BaseViewController: UIViewController,BaseViewControllerProtocol {
     }
 
     func bind() {
+        print(#function)
+    }
+
+    func requestData() {
         print(#function)
     }
 

@@ -31,19 +31,36 @@ class MineViewController: BaseViewController {
         view.addSubview(userinfo)
     }
 
-
     //数据绑定双向绑定
     override func bind(){
-// MARK: -- 新版
+        // MARK: -- 新版
         userVM.userinfo.bind(to: userinfo.model).disposed(by: rx.disposeBag)
 
+        updateInfo()
+
+        gotoSeeting()
+
+        gotoSave()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        userVM.requestDatas()
+    }
+}
+
+extension MineViewController{
+
+    func updateInfo(){
         //视图层抛出事件的真实处理
         userinfo.updateGesture
             .subscribe { [weak self] _ in
                 print(Thread.current)
             self?.userVM.updateuserInfo()
         }.disposed(by: rx.disposeBag)
+    }
 
+
+    func gotoSeeting(){
         userinfo.openGesture.subscribe { [weak self] _ in
             //事件处理:这里使用URLnavigator改进
             let setting = SettingViewController()
@@ -51,9 +68,17 @@ class MineViewController: BaseViewController {
             self?.navigationController?.pushViewController(setting, animated: true)
         }.disposed(by: rx.disposeBag)
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        userVM.requestDatas()
+
+
+    func gotoSave(){
+        userinfo.saveGesture.subscribe { [weak self] _ in
+
+            //事件处理:这里使用URLnavigator改进
+            let save = SaveViewController()
+            self?.navigationController?.pushViewController(save, animated: true)
+
+            
+        }.disposed(by: rx.disposeBag)
     }
 }
 
