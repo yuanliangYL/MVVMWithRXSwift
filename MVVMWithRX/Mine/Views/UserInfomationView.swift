@@ -8,6 +8,7 @@
 import UIKit
 import RxGesture
 import RxSwift
+import NSObject_Rx
 
 class UserInfomationView: UIView {
 
@@ -23,13 +24,12 @@ class UserInfomationView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        initAction()
+        initGestureAction()
     }
 
-
-    //UI相关操作内置与View层中，实现独立
+    //UI相关操作内置与View层中，实现独立,即使整个模块剥离出去也能最大程度适配
     //思考：这种方式在复用机制下会出现什么问题？
-    func initAction(){
+    func initGestureAction(){
         //View---->VM
         updateBtn.rx.tapGesture()
             .when(.recognized)
@@ -47,11 +47,9 @@ class UserInfomationView: UIView {
                 self?.openGesture.onNext(true)
         }.disposed(by: rx.disposeBag)
     }
-
 }
 
 extension UserInfomationView{
-    
     //实现绑定数据复制：思考如何将usermodel模型层剥离出去
     public var model:Binder<UserModel>{
         return Binder(self){ _,data in

@@ -20,14 +20,7 @@ class SettingViewController: BaseViewController {
 
     }
 
-    override func bind() {
-
-
-        userVM?.userinfo.subscribe {[weak self] user in
-            self?.name.text = user.element?.name
-        }.disposed(by: rx.disposeBag)
-
-
+    override func setupUI() {
         //输入框状态与按钮绑定
         name.rx.text
             .orEmpty
@@ -36,6 +29,13 @@ class SettingViewController: BaseViewController {
             .bind(to: sureChange.rx.isEnabled)
             .disposed(by: rx.disposeBag)
 
+    }
+
+    override func bind() {
+
+        userVM?.userinfo.subscribe {[weak self] user in
+            self?.name.text = user.element?.name
+        }.disposed(by: rx.disposeBag)
 
         sureChange.rx.tapGesture()
             .when(.recognized)

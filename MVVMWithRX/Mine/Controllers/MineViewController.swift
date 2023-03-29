@@ -37,18 +37,13 @@ class MineViewController: BaseViewController {
     //数据绑定双向绑定
     override func bind(){
 
-        //实现双向绑定VM--->View
-//        userVM.userinfo.subscribe { [weak self] user in
-//            guard let ur = user.element else {return}
-//            self?.userinfo.nameLabel.text = ur.name
-//            self?.userinfo.ageLabel.text = "\(ur.age)"
-//        }.disposed(by: rx.disposeBag)
-        //通过bind方法，将UI赋值操作交付给View层
+// MARK: -- 新版
         userVM.userinfo.bind(to: userinfo.model).disposed(by: rx.disposeBag)
 
-
         //视图层抛出事件的真实处理
-        userinfo.updateGesture.subscribe { [weak self] _ in
+        userinfo.updateGesture
+            .subscribe { [weak self] _ in
+                print(Thread.current)
             self?.userVM.updateuserInfo()
         }.disposed(by: rx.disposeBag)
 
@@ -59,6 +54,15 @@ class MineViewController: BaseViewController {
             self?.navigationController?.pushViewController(setting, animated: true)
         }.disposed(by: rx.disposeBag)
 
+
+// MARK: -- 旧版
+        //实现双向绑定VM--->View
+//        userVM.userinfo.subscribe { [weak self] user in
+//            guard let ur = user.element else {return}
+//            self?.userinfo.nameLabel.text = ur.name
+//            self?.userinfo.ageLabel.text = "\(ur.age)"
+//        }.disposed(by: rx.disposeBag)
+        //通过bind方法，将UI赋值操作交付给View层
 
         //View---->VM
 //        userinfo.updateBtn.rx.tapGesture()
