@@ -20,13 +20,12 @@ class SaveViewModel: BaseViewModel {
         }.disposed(by: rx.disposeBag)
     }
 
+
     func updateWith(indexPath: IndexPath){
-        let saves = savelist.value
-        let save = saves[indexPath.row]
-        let time = Date().timeIntervalSince1970
-        save.name = "nannana-\(time)"
-        save.time = "\(time)"
-        self.savelist.accept(saves)
+        saveService.updateWith(indexPath: indexPath, withOrigin: savelist.value)
+            .subscribe {[weak self] datas in
+            self?.savelist.accept(datas)
+        }
     }
 
 }

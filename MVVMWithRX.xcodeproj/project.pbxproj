@@ -128,9 +128,9 @@
 			children = (
 				57395F9A29D28BDE0067EC8D /* Controllers */,
 				57395F9129D2870C0067EC8D /* Services */,
-				57395F9029D287050067EC8D /* Views */,
 				57395F8F29D286F40067EC8D /* ViewModel */,
 				57395F8E29D286ED0067EC8D /* Model */,
+				57395F9029D287050067EC8D /* Views */,
 			);
 			path = Mine;
 			sourceTree = "<group>";

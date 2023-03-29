@@ -27,8 +27,18 @@ class SaveServices{
         }.asObservable()
    }
 
+    
+    func updateWith(indexPath: IndexPath,withOrigin:[SaveModel])->Observable<[SaveModel]>{
+        return Single.create{ single in
 
-    func updateWith(){
+            let saves = withOrigin
+            let save = saves[indexPath.row]
+            let time = Date().timeIntervalSince1970
+            save.name = "nannana-\(time)"
+            save.time = "\(time)"
 
-    }
+            single(.success(saves))
+            return Disposables.create {}
+        }.asObservable()
+   }
 }

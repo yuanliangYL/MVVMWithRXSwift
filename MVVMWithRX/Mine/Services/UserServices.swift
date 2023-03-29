@@ -19,7 +19,6 @@ class UserServices{
              let data = ["name":"jessica",
                          "age":20]
              single(.success(data))
-
              return Disposables.create {}
          }.asObservable()
     }

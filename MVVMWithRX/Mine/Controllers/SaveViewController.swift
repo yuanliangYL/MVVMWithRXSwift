@@ -18,16 +18,15 @@ class SaveViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
 
+    
     override func setupUI() {
         tableview.register(SaveTableViewCell.self)
     }
 
-    override func bind() {
 
+    override func bind() {
         saveVM.savelist.subscribe {[weak self] datas in
             self?.datas = datas
             self?.tableview.reloadData()
@@ -37,6 +36,7 @@ class SaveViewController: BaseViewController {
     override func requestData() {
         saveVM.requestDatas()
     }
+
 }
 
 extension SaveViewController:UITableViewDataSource,UITableViewDelegate{
@@ -50,16 +50,13 @@ extension SaveViewController:UITableViewDataSource,UITableViewDelegate{
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell:SaveTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SaveTableViewCell", for: indexPath) as! SaveTableViewCell
         cell.data = self.datas[indexPath.row]
-
         //把主动销毁的能力收回，销毁垃圾袋交给我们的cell.disposeBag,在我们重用响应的时候，及时销毁，重置！
         cell.logGesture.subscribe { data in
             print("log data is :\(String(describing: data.element?.name))")
             //执行具体操作
         }.disposed(by: cell.disposeBag)
-
         return cell
     }
 

@@ -29,7 +29,7 @@ class SaveTableViewCell: BaseTableViewCell {
     func initGestureAction(){
         logInfoBtn.rx.tapGesture()
             .when(.recognized)
-            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe {[weak self] _ in
                 guard let data = self?.data else { return }
                 //事件处理
