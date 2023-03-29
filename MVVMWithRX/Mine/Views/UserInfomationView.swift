@@ -7,6 +7,7 @@
 
 import UIKit
 import RxGesture
+import RxSwift
 
 class UserInfomationView: UIView {
 
@@ -19,4 +20,15 @@ class UserInfomationView: UIView {
         super.awakeFromNib()
     }
 
+}
+
+extension UserInfomationView{
+    
+    //实现绑定数据复制：思考如何将usermodel模型层剥离出去
+    public var model:Binder<UserModel>{
+        return Binder(self){ _,data in
+            self.nameLabel.text = data.name
+            self.ageLabel.text = "\(data.age)"
+        }
+    }
 }

@@ -22,9 +22,11 @@ class SettingViewController: BaseViewController {
 
     override func bind() {
 
+
         userVM?.userinfo.subscribe {[weak self] user in
             self?.name.text = user.element?.name
         }.disposed(by: rx.disposeBag)
+
 
         //输入框状态与按钮绑定
         name.rx.text
@@ -34,14 +36,13 @@ class SettingViewController: BaseViewController {
             .bind(to: sureChange.rx.isEnabled)
             .disposed(by: rx.disposeBag)
 
+
         sureChange.rx.tapGesture()
             .when(.recognized)
             .throttle(.seconds(3), scheduler: MainScheduler.instance)
             .subscribe {[weak self] _ in
-
                 self?.userVM?.updateName(name: self?.name.text ?? "")
                 self?.navigationController?.popViewController(animated: true)
-                
             }.disposed(by: rx.disposeBag)
 
     }
