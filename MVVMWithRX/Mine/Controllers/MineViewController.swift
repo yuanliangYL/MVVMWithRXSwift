@@ -10,7 +10,7 @@ import RxSwift
 class MineViewController: BaseViewController {
 
     //controller持有View
-    var userinfo:UserInfomationView!
+    var userinfo:UserInfomationView! = UserInfomationView.loadFromNib()
     var userVM:UserViewModel! = UserViewModel()
 
     override func viewDidLoad() {
@@ -26,10 +26,8 @@ class MineViewController: BaseViewController {
         userinfo.frame = view.bounds
     }
 
-
     //UI构建
      override func setupUI(){
-        userinfo = Bundle.main.loadNibNamed("UserInfomationView", owner: nil)?.first as? UserInfomationView
         view.addSubview(userinfo)
     }
 

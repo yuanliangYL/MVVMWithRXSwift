@@ -25,6 +25,7 @@
 		57D9264029D29CEB00A080BB /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D9263E29D29CEB00A080BB /* BaseViewController.xib */; };
 		57D9264329D2DB1100A080BB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9264129D2DB1100A080BB /* SettingViewController.swift */; };
 		57D9264429D2DB1100A080BB /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D9264229D2DB1100A080BB /* SettingViewController.xib */; };
+		57F541CE29D3ED7600AB8652 /* UIView+LoadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F541CD29D3ED7600AB8652 /* UIView+LoadNib.swift */; };
 		B72EFC05AA252024902C8C7E /* Pods_MVVMWithRX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EEBE7065E3E23B516F6D81 /* Pods_MVVMWithRX.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		57D9263E29D29CEB00A080BB /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 		57D9264129D2DB1100A080BB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		57D9264229D2DB1100A080BB /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		57F541CD29D3ED7600AB8652 /* UIView+LoadNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadNib.swift"; sourceTree = "<group>"; };
 		D7EEBE7065E3E23B516F6D81 /* Pods_MVVMWithRX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMWithRX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 		57395F7629D27C540067EC8D /* MVVMWithRX */ = {
 			isa = PBXGroup;
 			children = (
+				57F541CC29D3ED1400AB8652 /* Common */,
 				57395F9D29D28F640067EC8D /* Base */,
 				57395F8B29D285C00067EC8D /* Mine */,
 				57395F7729D27C540067EC8D /* AppDelegate.swift */,
@@ -164,6 +167,14 @@
 				57D9263E29D29CEB00A080BB /* BaseViewController.xib */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		57F541CC29D3ED1400AB8652 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				57F541CD29D3ED7600AB8652 /* UIView+LoadNib.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		66D5D5068049591823BDF86B /* Pods */ = {
@@ -303,6 +314,7 @@
 			files = (
 				57395F7C29D27C540067EC8D /* ViewController.swift in Sources */,
 				57395F7829D27C540067EC8D /* AppDelegate.swift in Sources */,
+				57F541CE29D3ED7600AB8652 /* UIView+LoadNib.swift in Sources */,
 				57D9263F29D29CEB00A080BB /* BaseViewController.swift in Sources */,
 				57395F9929D28B560067EC8D /* UserServices.swift in Sources */,
 				57395F9C29D28BF00067EC8D /* MineViewController.swift in Sources */,

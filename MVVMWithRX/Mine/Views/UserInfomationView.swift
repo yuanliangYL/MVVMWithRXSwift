@@ -12,11 +12,13 @@ import NSObject_Rx
 
 class UserInfomationView: UIView {
 
+    //UI
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var updateBtn: UIButton!
     @IBOutlet weak var gosettingBtn: UIButton!
 
+    //手势
     //数据更新手势操作
     var updateGesture = PublishSubject<Bool>()
     //页面跳转
@@ -50,6 +52,7 @@ class UserInfomationView: UIView {
 }
 
 extension UserInfomationView{
+    
     //实现绑定数据复制：思考如何将usermodel模型层剥离出去
     public var model:Binder<UserModel>{
         return Binder(self){ _,data in

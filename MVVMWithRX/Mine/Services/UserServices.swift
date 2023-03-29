@@ -9,6 +9,8 @@
 import Foundation
 import RxSwift
 
+
+//如果这里存在APP内多个地方共享，可以考虑用单例实现
 class UserServices{
     
     //模拟获取用户数据

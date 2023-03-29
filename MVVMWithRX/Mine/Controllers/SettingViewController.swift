@@ -42,9 +42,7 @@ class SettingViewController: BaseViewController {
             .subscribe {[weak self] _ in
                 self?.changeName()
             }.disposed(by: rx.disposeBag)
-
     }
-
 }
 
 
