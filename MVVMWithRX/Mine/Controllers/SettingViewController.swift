@@ -32,19 +32,32 @@ class SettingViewController: BaseViewController {
     }
 
     override func bind() {
-
         userVM?.userinfo.subscribe {[weak self] user in
-            self?.name.text = user.element?.name
+            self?.updateInfo(name: user.element?.name)
         }.disposed(by: rx.disposeBag)
 
         sureChange.rx.tapGesture()
             .when(.recognized)
             .throttle(.seconds(3), scheduler: MainScheduler.instance)
             .subscribe {[weak self] _ in
-                self?.userVM?.updateName(name: self?.name.text ?? "")
-                self?.navigationController?.popViewController(animated: true)
+                self?.changeName()
             }.disposed(by: rx.disposeBag)
 
     }
 
+}
+
+
+// MARK: -- 尽量将功能分离处理，满足功能单一原则
+extension SettingViewController{
+    //更新名称
+    func updateInfo(name:String?){
+        self.name.text = name
+    }
+
+    //修改名称
+    func changeName(){
+        self.userVM?.updateName(name: self.name.text ?? "")
+        self.navigationController?.popViewController(animated: true)
+    }
 }
